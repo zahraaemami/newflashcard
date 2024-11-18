@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework_simplejwt import views as jwt_views
-from .views import CreateUser
+from authentication.views import CreateUser
 
 urlpatterns = [
     # Your URLs...
