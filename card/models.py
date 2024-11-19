@@ -1,7 +1,13 @@
 from django.db import models
 
-class FlashCard(models.Model) :
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
+
+class FlashCard(models.Model) :
+   
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     question = models.TextField()
 
     answer = models.TextField()
