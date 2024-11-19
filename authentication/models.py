@@ -1,13 +1,15 @@
-# from django.db import models
+# 3. بررسی دسترسی حساب:
+# اگر حساب کاربری‌ات ساخته شده اما دسترسی Staff ندارد:
 
-# class User (models.Model) :
-
-#     username  = models.CharField(max_length = 150)
-    
-#     email = models.EmailField(max_length={2:254})
-    
-#     password  = models.TextField()
-    
-
-#     def __str__(self) :
-#         return self.username
+# وارد Django shell شو:
+# bash
+# Copy code
+# python manage.py shell
+# کاربر را پیدا کن و دسترسی‌های لازم را اضافه کن:
+# python
+# Copy code
+# from django.contrib.auth.models import User
+# user = User.objects.get(username="zahra")  # نام کاربری مورد نظر
+# user.is_staff = True  # فعال کردن دسترسی Staff
+# user.is_superuser = True  # فعال کردن دسترسی ادمین
+# user.save()
